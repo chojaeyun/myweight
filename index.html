@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		body{margin: auto;text-align: center;width: 700px;font-family: ' verdana', sans-serif;color: #1A237E}	
+
+
+		input{ background: #ddd; 
+				border:none;
+				padding:10px;
+				color:black;
+				font-size: 40px;
+				margin-bottom: 10px;
+				border-radius: 10px;
+				box-shadow: 0px 0px 5px gray inset;
+
+				.box1{height: 250px; margin: 0px;}
+		h1{background-color: #FEFDD0;padding:40px;margin-top: 0px;border-bottom: 5px solid #1A237E;border-radius: 60px;
+				color: #BBDEFB;font-family: 'verdana', sans-serif;font-size: 48px;}
+		
+		.box1{height: 260px; margin: 0px;
+		border-radius: 40px;
+				color: #BBDEFB;font-family: 'verdana', sans-serif;font-size: 28px;}}
+		h1{background-color: #BBDEFB;padding:20px;margin-top: 0px;border-bottom: 5px solid #1A237E;border-radius: 10px;
+				color: #1A237E;font-family: 'verdana', sans-serif;font-size: 28px;}
+		.box1 p{font-size: 15px;}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">
+	<h1>당신의 몸은 과다체중일까요?</h1>
+	</div>
+	<br>
+	
+	키 140cm<input type="range" id="myheight" min="140" max="200">200cm
+	<div id="hmonitor">176</div><br>
+	
+	체중 40kg<input type="range" id="myweight" min="40" max="100">100kg
+	<div id="wmonitor">74</div><br>
+	
+	<br><br>
+	<div id="monitor">당신의 과다체중</div>
+	
+	<script type="text/javascript">
+		myheight.oninput = function(){
+			hmonitor.innerHTML = myheight.value;
+
+			var myh = myheight.value;
+			var myw = myweight.value;
+			var sweight = (myh - 100)*0.9;
+			var overweight = Math.round(myw - sweight);
+
+			monitor.innerHTML = "당신은 " +	
+			overweight + "kg만큼 과다체중입니다.";
+		}
+
+		myweight.oninput = function(){
+			wmonitor.innerHTML = myweight.value;
+
+			var myh = myheight.value;
+			var myw = myweight.value;
+			var sweight = (myh - 100)*0.9;
+			var overweight = Math.round(myw - sweight);
+
+			monitor.innerHTML = "당신은 " +	
+			overweight + "kg만큼 과다체중입니다.";
+		}
+
+		
+			
+		
+	</script>
+</body>
+</html>
